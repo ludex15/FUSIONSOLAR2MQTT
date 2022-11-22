@@ -17,7 +17,7 @@ I used only realtime DEVICE data, becasue it also contains daily production and 
 You need to have docker and docker compose installed.
 I used Raspberry Pi 3B+ for this purpose. Please see docker documentation how to install this software for your system.
 
-### Set up env file.
+### Set up .env file
 You need to get into **app** directory. Please edit env file as you wish.
 
 First you need to specify username and password of your northbound account (not fusionsolar account):
