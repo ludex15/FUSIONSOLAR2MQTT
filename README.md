@@ -44,6 +44,13 @@ Last, you need to specify what you want to publish based on publish objects, dev
     PUBLISH_INTERVAL = 5 #in minutes
 
 
+### Run app
+If you have set up the .env file, you can run the app.
+Go to **app** directory and run
+
+    sh setup.sh
+    
+
 ### Get api info
 To get information what devices are accessible from your northbound account and what data you can get from inverter you can use this app.
 
