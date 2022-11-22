@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mqtt_broker
+    restart: always
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+  fusionsolar2mqtt:
+    build:
+      context: fusionsolar2mqtt
+      dockerfile: Dockerfile
+    container_name: fusionsolar2mqtt
+    restart: always
+    depends_on:
+      - mosquitto
+    environment:
+      FUSIONSOLAR_USR: $FUSIONSOLAR_USR
+      FUSIONSOLAR_PASS: $FUSIONSOLAR_PASS
+      MQTTCLIENT_ID: $MQTTCLIENT_ID
+      MQTTCLIENT_USR: $MQTTCLIENT_USR
+      MQTTCLIENT_PASS: $MQTTCLIENT_PASS
+      MQTTBROKER_HOST: $MQTTBROKER_HOST
+      MQTTBROKER_PORT: $MQTTBROKER_PORT
+      PUBLISH_OBJECTS: $PUBLISH_OBJECTS
+      PUBLISH_DEVICE_TYPE_IDS: $PUBLISH_DEVICE_TYPE_IDS
+      PUBLISH_PLANT_IDS: $PUBLISH_PLANT_IDS
+      PUBLISH_BASE_TOPIC: $PUBLISH_BASE_TOPIC
+      PUBLISH_INTERVAL: $PUBLISH_INTERVAL
