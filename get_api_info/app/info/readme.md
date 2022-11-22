@@ -1,0 +1,1 @@
+here are txt files from your fusionsolar api endpoints

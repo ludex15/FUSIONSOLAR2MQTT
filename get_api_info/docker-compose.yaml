@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  getinfo:
+    build:
+      context: app
+      dockerfile: Dockerfile
+    container_name: getinfo
+    volumes:
+      - ./app/info:/app/info
+    environment:
+      FUSIONSOLAR_USR: $FUSIONSOLAR_USR
+      FUSIONSOLAR_PASS: $FUSIONSOLAR_PASS
+      PUBLISH_BASE_TOPIC: $PUBLISH_BASE_TOPIC
