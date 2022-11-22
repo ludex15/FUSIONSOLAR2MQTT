@@ -2,6 +2,7 @@
 This repository contains files to create docker MQTT client to get and publish data from your huawei inverter (FusionSolar).
 Can be integrated with automatization platform that can connect to MQTT broker. (I used openHAB + HUAWEI SUN 2000L)
 (this guide needs to be improved, if you have any questions, do not hesitate to contact me)
+This app uses api client from https://github.com/EnergieID/FusionSolar
 
 ## Setup
 This guide should help you create MQTT client for your huawei inverter to get data.
@@ -49,7 +50,7 @@ If you have set up the .env file, you can run the app.
 Go to **app** directory and run
 
     sh setup.sh
-    
+
 
 ### Get api info
 To get information what devices are accessible from your northbound account and what data you can get from inverter you can use this app.
